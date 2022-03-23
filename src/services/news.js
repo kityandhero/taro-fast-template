@@ -61,7 +61,7 @@ function createEmptyList(size) {
   const list = [];
 
   if (size > 0) {
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < size; i++) {
       list.push({});
     }
   }
@@ -101,7 +101,7 @@ export async function getOverviewData(params) {
             },
           };
         }),
-        sectionList: createEmptyList(5).map((o, i) => {
+        sectionList: createEmptyList(6).map((o, i) => {
           const sectionNo = `section_item_${i + 1}`;
 
           return {
@@ -114,7 +114,7 @@ export async function getOverviewData(params) {
               config: {
                 renderMode: `${i + 1}`,
               },
-              articles: createEmptyList(6).map((one, index) => {
+              articles: createEmptyList(4).map((one, index) => {
                 const no = `${sectionNo}_article_item_${index + 1}`;
 
                 return {
