@@ -4,6 +4,11 @@ export async function getData(params) {
   return executiveRequest({
     api: `/metaData/get`,
     params,
+    useVirtualRequest: true,
+    virtualNeedAuthorize: false,
+    virtualSuccessResponse: {
+      data: {},
+    },
   });
 }
 

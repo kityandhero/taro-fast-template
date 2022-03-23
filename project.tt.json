@@ -1,6 +1,6 @@
 {
   "miniprogramRoot": "dist/tt",
-  "projectname": "taro-fast-framework",
+  "projectname": "taro-fast-template",
   "appid": "testAppId",
   "setting": {
     "es6": false,
