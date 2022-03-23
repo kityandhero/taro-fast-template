@@ -1,3 +1,11 @@
 {
-  "cSpell.words": ["pnpm", "precommit", "pxtorem"]
+  "cSpell.words": [
+    "compat",
+    "noninteractive",
+    "pnpm",
+    "precommit",
+    "pxtorem",
+    "subpackages",
+    "Swiper"
+  ]
 }

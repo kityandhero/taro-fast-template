@@ -2,8 +2,6 @@ import { checkEnvIsDevelopment } from 'taro-fast-common/es/utils/tools';
 import { AppBase } from 'taro-fast-framework/es/framework';
 import 'taro-fast-common/es/constants.css';
 import 'taro-fast-component/es/index.css';
-import 'taro-fast-component-extra/es/index.css';
-import 'taro-fast-component-prism/es/index.css';
 
 import models from './models';
 
@@ -14,11 +12,11 @@ const config = {
   // showRequestInfo: checkEnvIsDevelopment(),
   showUseVirtualRequestMessage: false,
   apiPrefix: {
-    corsTargetDomain: 'https://universalitymallapi.panduolakeji.com',
+    corsTargetDomain: 'https://api.a.com',
   },
   apiSuccessCode: 200,
   authenticationFailCode: 2001,
-  loginPath: '/user/login',
+  loginPath: '/entrance/signIn',
   apiVersion: 'v1',
 };
 
