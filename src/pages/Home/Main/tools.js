@@ -112,7 +112,7 @@ export function buildItem({
       {(articles || []).map((o, i) => {
         const { title, description, image, createTime } = o;
 
-        if (renderMode === 2) {
+        if (renderMode === 1) {
           return (
             <FlexBox
               key={`article_${keyPrefix}_${i}`}
@@ -200,7 +200,7 @@ export function buildItem({
           );
         }
 
-        if (inCollection([3, 1], renderMode)) {
+        if (inCollection([3, 2, 6], renderMode)) {
           return (
             <FlexBox
               key={`article_${keyPrefix}_${i}`}

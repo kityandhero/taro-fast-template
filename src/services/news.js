@@ -1,5 +1,7 @@
 import { datetimeFormat } from 'taro-fast-common/es/utils/constants';
 import { formatDatetime, getNow } from 'taro-fast-common/es/utils/tools';
+
+import { emptyImage } from '../customConfig/constants';
 import { executiveRequest } from '../utils/request';
 
 const galleryItem = {
@@ -26,7 +28,7 @@ const navItem = {
 const sectionItem = {
   sectionId: '',
   name: '',
-  image: '',
+  image: emptyImage,
   rectangleImage: '',
   description: '',
   platformId: '1',
@@ -41,7 +43,7 @@ const articleItem = {
   title: '',
   subtitle: '',
   description: '',
-  image: '',
+  image: emptyImage,
   rectangleImage: '',
   video: '',
   audio: '',
@@ -107,7 +109,8 @@ export async function getOverviewData(params) {
             ...{
               sectionId: sectionNo,
               key: sectionNo,
-              description: `栏目${i + 1}`,
+              name: `栏目${i + 1}`,
+              description: `栏目${i + 1}简介描述`,
               config: {
                 renderMode: `${i + 1}`,
               },
@@ -119,7 +122,12 @@ export async function getOverviewData(params) {
                   ...{
                     id: no,
                     key: no,
-                    description: `栏目${i + 1}文章标题${index + 1}`,
+                    title: `栏目${i + 1}文章${
+                      index + 1
+                    }的标题标题标题标题标题标题标题标题`,
+                    description: `栏目${i + 1}文章${
+                      index + 1
+                    }简介描述简介描述简介描述简介描述简介描述`,
                     createTime: formatDatetime({
                       data: getNow(),
                       fmt: datetimeFormat.yearMonthDayHourMinuteSecond,
