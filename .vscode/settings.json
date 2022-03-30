@@ -3,6 +3,7 @@
     "compat",
     "noninteractive",
     "pnpm",
+    "preact",
     "precommit",
     "pxtorem",
     "subpackages",
