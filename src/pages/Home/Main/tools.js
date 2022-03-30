@@ -16,7 +16,7 @@ import {
   Space,
   ColorText,
   Icon,
-  HorizontalScrollBox,
+  ScrollBox,
   TranslucentBox,
 } from 'taro-fast-component/es/customComponents';
 
@@ -33,7 +33,8 @@ export function buildItem({
 
   if (renderMode === 4) {
     return (
-      <HorizontalScrollBox
+      <ScrollBox
+        height={transformSize(243)}
         gap={20}
         list={articles}
         itemBuilder={(item) => {
