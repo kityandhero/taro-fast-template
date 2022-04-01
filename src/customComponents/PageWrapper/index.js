@@ -20,6 +20,12 @@ export default class PageWrapper extends AuthorizationWrapper {
 
   // loadRemoteRequestAfterMount = false;
 
+  verifySession = true;
+
+  verifyTicket = true;
+
+  verifyTicketValidity = true;
+
   reloadRemoteMetaData = () => {
     const { dispatch } = this.props;
 

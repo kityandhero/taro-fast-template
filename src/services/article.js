@@ -1,15 +1,15 @@
 import { executiveRequest } from '../utils/request';
 
-export async function getData(params) {
+export async function pageListData(params) {
   return executiveRequest({
-    api: `/metaData/get`,
+    api: `/news/article/pageList`,
     params,
   });
 }
 
-export async function exchangeShareData(params) {
+export async function getData(params) {
   return executiveRequest({
-    api: `/share/exchangeShare`,
+    api: `/news/article/get`,
     params,
   });
 }

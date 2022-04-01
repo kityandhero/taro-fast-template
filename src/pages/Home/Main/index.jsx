@@ -2,11 +2,9 @@ import classNames from 'classnames';
 import { connect } from 'react-redux';
 import { View } from '@tarojs/components';
 
-import {
-  stringIsNullOrWhiteSpace,
-  transformSize,
-} from 'taro-fast-common/es/utils/tools';
+import { navigateTo, transformSize } from 'taro-fast-common/es/utils/tools';
 import { isArray } from 'taro-fast-common/es/utils/typeCheck';
+import { getApiDataCore } from 'taro-fast-framework/es/utils/actionAssist';
 import {
   Space,
   ImageBox,
@@ -17,12 +15,12 @@ import {
   CenterBox,
   Card,
   More,
-  Avatar,
 } from 'taro-fast-component/es/customComponents';
 
-import PageWrapper from '../../../customComponents/PageWrapper';
+import { pathCollection } from '../../../customConfig/config';
+import BasePageWrapper from '../BasePageWrapper';
 
-import { classPrefix, buildItem } from './tools';
+import { classPrefix, buildItem } from '../Assist/tools';
 
 import './index.less';
 
@@ -43,14 +41,18 @@ const nameStyle = {
 
 // eslint-disable-next-line no-undef
 definePageConfig({
-  navigationBarTitleText: '首页',
+  navigationBarTitleText: '新闻应用--首页',
+  backgroundColor: '#3778F4',
 });
 
-@connect(({ news, global }) => ({
+@connect(({ news, session, entrance, global, schedulingControl }) => ({
   news,
+  session,
+  entrance,
   global,
+  schedulingControl,
 }))
-export default class Index extends PageWrapper {
+export default class Index extends BasePageWrapper {
   enablePullDownRefresh = true;
 
   enableBackTop = true;
@@ -70,11 +72,7 @@ export default class Index extends PageWrapper {
   }
 
   getApiData = (props) => {
-    const {
-      news: { data },
-    } = props;
-
-    return data;
+    return getApiDataCore({ props, modelName: 'news' });
   };
 
   afterLoadSuccess = ({
@@ -112,6 +110,12 @@ export default class Index extends PageWrapper {
     return [...list, ...list, ...list, ...list, ...list];
   };
 
+  goToSection = (item) => {
+    const { sectionId } = item;
+
+    navigateTo(`${pathCollection.news.section.path}?sectionId=${sectionId}`);
+  };
+
   renderFurther() {
     const { navList, sectionList } = this.state;
 
@@ -147,7 +151,7 @@ export default class Index extends PageWrapper {
               <View
                 className={classNames(`${classPrefix}__navContainor__navBox`)}
               >
-                <Grid columns={4} gap={10}>
+                <Grid columns={5}>
                   {(navList || []).map((item, index) => {
                     const { image, value } = item;
 
@@ -158,17 +162,13 @@ export default class Index extends PageWrapper {
                           flexAuto="top"
                           top={
                             <CenterBox>
-                              {stringIsNullOrWhiteSpace(image) ? (
-                                <Avatar text={value} />
-                              ) : (
-                                <View
-                                  className={classNames(
-                                    `${classPrefix}__navContainor__navBox__imageBox`,
-                                  )}
-                                >
-                                  <ImageBox src={image} />
-                                </View>
-                              )}
+                              <View
+                                className={classNames(
+                                  `${classPrefix}__navContainor__navBox__imageBox`,
+                                )}
+                              >
+                                <ImageBox src={image} />
+                              </View>
                             </CenterBox>
                           }
                           bottom={<View style={nameStyle}>{value}</View>}
@@ -209,7 +209,13 @@ export default class Index extends PageWrapper {
                     border={false}
                     bodyBorder={false}
                     space={false}
-                    extra={<More />}
+                    extra={
+                      <More
+                        onClick={() => {
+                          this.goToSection(item);
+                        }}
+                      />
+                    }
                     extraStyle={{ padding: 0 }}
                   >
                     {buildItem({

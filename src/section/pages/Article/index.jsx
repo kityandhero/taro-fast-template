@@ -10,9 +10,12 @@ definePageConfig({
   navigationBarTitleText: '文章页',
 });
 
-@connect(({ article, global }) => ({
+@connect(({ article, session, entrance, global, schedulingControl }) => ({
   article,
+  session,
+  entrance,
   global,
+  schedulingControl,
 }))
 export default class Index extends PageWrapper {
   enableBackTop = true;

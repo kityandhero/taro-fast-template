@@ -1,3 +1,7 @@
+export const shareTransfer = {
+  home: '1000',
+};
+
 export const colStyle = {
   textAlign: 'center',
   backgroundColor: '#0092ffbf',
@@ -5,8 +9,6 @@ export const colStyle = {
 
 export const cardHeaderStyle = {
   backgroundColor: '#f5f7fa',
-  // color: '#969696',
-  // backgroundColor: 'var(--tfc-color-ghost-white)',
   color: '--tfc-color-black',
 };
 

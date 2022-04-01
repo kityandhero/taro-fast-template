@@ -1,14 +1,10 @@
 import { showInfoMessage } from 'taro-fast-common/es/utils/tools';
-import {
-  pretreatmentRemoteSingleData,
-  handleCommonDataAssist,
-  handleListDataAssist,
-  handlePageListDataAssist,
-} from 'taro-fast-framework/es/utils/requestAssistor';
+import { pretreatmentRemoteSingleData } from 'taro-fast-framework/es/utils/requestAssistor';
+import { reducerCommonCollection } from 'taro-fast-framework/es/utils/dva';
 import { modelCollection } from 'taro-fast-framework/es/utils/globalModel';
 
 import { getMetaDataCache, setMetaDataCache } from '@/utils/storageAssist';
-import { getData } from '@/services/global';
+import { getData, exchangeShareData } from '@/services/global';
 
 export default {
   namespace: 'global',
@@ -19,6 +15,7 @@ export default {
       needSyncUserInfo: false,
       globalQuery: { path: '', query: {}, scene: 0 },
       rankList: [],
+      sectionList: [],
     },
   },
 
@@ -56,10 +53,11 @@ export default {
         const { dataSuccess, data: metaData } = data;
 
         if (dataSuccess) {
-          const { rankList } = metaData;
+          const { rankList, sectionList } = metaData;
 
           result = {
             rankList,
+            sectionList,
           };
 
           setMetaDataCache(result);
@@ -71,23 +69,23 @@ export default {
         payload: result,
       });
     },
+    *exchangeShare({ payload }, { call, put }) {
+      const response = yield call(exchangeShareData, payload);
+
+      yield put({
+        type: 'handleCommonData',
+        payload: response,
+      });
+    },
   },
 
   reducers: {
-    handleCommonData(state, action) {
-      return handleCommonDataAssist(state, action);
-    },
-    handleListData(state, action) {
-      return handleListDataAssist(state, action);
-    },
-    handlePageListData(state, action) {
-      return handlePageListDataAssist(state, action);
-    },
     changeMetaData(state, { payload }) {
       return {
         ...state,
         ...payload,
       };
     },
+    ...reducerCommonCollection,
   },
 };

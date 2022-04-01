@@ -1,5 +1,5 @@
 export default {
-  pages: ['pages/home/main/index'],
+  pages: ['pages/entry/index'],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
@@ -13,4 +13,10 @@ export default {
       pages: ['pages/section/index', 'pages/article/index'],
     },
   ],
+  permission: {
+    'scope.userLocation': {
+      desc: '你的位置信息将用于筛选所在地的商品。',
+    },
+  },
+  serviceProviderTicket: '',
 };

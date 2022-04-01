@@ -1,8 +1,11 @@
 export const appId = '';
 
 const rootPathCollection = {
-  main: {
-    path: '/pages/home/main/index',
+  entry: {
+    path: '/pages/entry/index',
+  },
+  home: {
+    path: '/pages/home/index',
   },
 };
 
