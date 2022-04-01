@@ -1,5 +1,5 @@
 export default {
-  pages: ['pages/entry/index'],
+  pages: ['pages/entry/main/index', 'pages/home/main/index'],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
@@ -10,7 +10,7 @@ export default {
     {
       root: 'section',
       name: '栏目',
-      pages: ['pages/section/index', 'pages/article/index'],
+      pages: ['pages/section/main/index', 'pages/article/main/index'],
     },
   ],
   permission: {

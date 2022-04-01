@@ -2,19 +2,19 @@ export const appId = '';
 
 const rootPathCollection = {
   entry: {
-    path: '/pages/entry/index',
+    path: '/pages/entry/main/index',
   },
   home: {
-    path: '/pages/home/index',
+    path: '/pages/home/main/index',
   },
 };
 
 const sectionPathCollection = {
   section: {
-    path: '/section/pages/section/index',
+    path: '/section/pages/section/main/index',
   },
   article: {
-    path: '/section/pages/article/index',
+    path: '/section/pages/article/main/index',
   },
 };
 

@@ -10,8 +10,7 @@ import { isFunction } from 'taro-fast-common/es/utils/typeCheck';
 
 import { shareTransfer } from '../../../customConfig/constants';
 import { pathCollection } from '../../../customConfig/config';
-
-import BasePageWrapper from '../BasePageWrapper';
+import PageWrapper from '../../../customComponents/PageWrapper';
 
 // eslint-disable-next-line no-undef
 definePageConfig({
@@ -24,7 +23,7 @@ definePageConfig({
   global,
   schedulingControl,
 }))
-export default class Index extends BasePageWrapper {
+export default class Index extends PageWrapper {
   loadRemoteRequestAfterMount = false;
 
   doWorkWhenCheckTicketValidityOnPrepareLoadRemoteRequest = () => {
@@ -136,13 +135,13 @@ export default class Index extends BasePageWrapper {
         message: '即将为您跳转',
       });
 
-      redirectTo(pathCollection.news.home.path);
+      redirectTo(pathCollection.root.home.path);
     } else if (transfer === shareTransfer.customer) {
       showInfoMessage({
         message: '即将为您跳转',
       });
 
-      redirectTo(pathCollection.news.section.path);
+      redirectTo(pathCollection.section.section.path);
     } else if (transfer === shareTransfer.webPage) {
       showInfoMessage({
         message: '即将为您跳转',
@@ -168,7 +167,7 @@ export default class Index extends BasePageWrapper {
         message: '即将为您跳转',
       });
 
-      redirectTo(pathCollection.news.home.path);
+      redirectTo(pathCollection.root.home.path);
     }
   }
 

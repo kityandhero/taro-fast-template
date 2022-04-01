@@ -1,5 +1,7 @@
 export const shareTransfer = {
-  home: '1000',
+  home: '0',
+  section: '10',
+  webPage: '100',
 };
 
 export const colStyle = {

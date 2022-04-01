@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
 import { View } from '@tarojs/components';
 
-import PageWrapper from '../../../customComponents/PageWrapper';
+import PageWrapper from '../../../../customComponents/PageWrapper';
 
 import './index.less';
 
 // eslint-disable-next-line no-undef
 definePageConfig({
-  navigationBarTitleText: '栏目页',
+  navigationBarTitleText: '文章页',
 });
 
-@connect(({ section, session, entrance, global, schedulingControl }) => ({
-  section,
+@connect(({ article, session, entrance, global, schedulingControl }) => ({
+  article,
   session,
   entrance,
   global,
@@ -26,14 +26,14 @@ export default class Index extends PageWrapper {
     this.state = {
       ...this.state,
       ...{
-        loadApiPath: 'section/singleList',
+        loadApiPath: 'article/get',
       },
     };
   }
 
   getApiData = (props) => {
     const {
-      section: { data },
+      article: { data },
     } = props;
 
     return data;
@@ -42,7 +42,7 @@ export default class Index extends PageWrapper {
   renderFurther() {
     return (
       <>
-        <View>栏目页</View>
+        <View>文章页</View>
       </>
     );
   }

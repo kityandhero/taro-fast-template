@@ -5,6 +5,13 @@ export async function signInData(params) {
   return executiveRequest({
     api: `/entrance/signIn`,
     params,
+    useVirtualRequest: true,
+    virtualNeedAuthorize: false,
+    virtualSuccessResponse: {
+      data: {
+        sessionEffective: false,
+      },
+    },
   });
 }
 

@@ -57,10 +57,10 @@ specifiers:
   stylelint-config-prettier: ^9.0.3
   stylelint-config-standard: ^25.0.0
   stylelint-declaration-block-no-ignored-properties: ^2.5.0
-  taro-fast-common: ^1.0.21
-  taro-fast-component: ^2.0.21
-  taro-fast-component-extra: ^2.0.21
-  taro-fast-framework: ^1.0.23
+  taro-fast-common: ^1.0.22
+  taro-fast-component: ^2.0.22
+  taro-fast-component-extra: ^2.0.22
+  taro-fast-framework: ^1.0.25
   typescript: ^4.6.3
 
 dependencies:
@@ -77,10 +77,10 @@ dependencies:
   redux: 4.1.2
   redux-logger: 3.0.6
   redux-thunk: 2.4.1_redux@4.1.2
-  taro-fast-common: 1.0.21
-  taro-fast-component: 2.0.22
-  taro-fast-component-extra: 2.0.21
-  taro-fast-framework: 1.0.23
+  taro-fast-common: 1.0.22
+  taro-fast-component: 2.0.23
+  taro-fast-component-extra: 2.0.22
+  taro-fast-framework: 1.0.25
 
 devDependencies:
   '@babel/core': 7.17.8
@@ -11249,8 +11249,8 @@ packages:
       postcss-value-parser: 3.3.1
     dev: true
 
-  /taro-fast-common/1.0.21:
-    resolution: {integrity: sha512-F19tTyDU7L2glqAuN7MdDIrKHj6Ia14HnIN9vij9V+vBFYGvDoAlC9UV+pT2Ncal05kvoddGHc+pIcQEWNUv6A==}
+  /taro-fast-common/1.0.22:
+    resolution: {integrity: sha512-yze+GXM+eLjQUQK8EyLAl5fhyVVfTl5SboxoocK5dWtMtZCjG21zKojvp+dQyR3Ph5qFafJHmx0YdehP8f/Mzw==}
     dependencies:
       '@tarojs/components': 3.4.4
       '@tarojs/react': 3.4.4_react@17.0.2
@@ -11261,8 +11261,8 @@ packages:
       react-dom: 17.0.2_react@17.0.2
     dev: false
 
-  /taro-fast-component-extra/2.0.21:
-    resolution: {integrity: sha512-p+ZTHxAoDN/gB7JhAftzTgmTQybBgHpaivpUWen+LEDC/9sAk8oSBuxebD943ztMO9YqdJxNwofrzXlrJ3+lnw==}
+  /taro-fast-component-extra/2.0.22:
+    resolution: {integrity: sha512-vhi620sY1MN5IpUZe0yLaABpTwzCq8iN2Qy02EBi8iOAqMEMEra9hGpBKE2cNFK4WPGoSWuyIO6yJFMw1gnLfw==}
     dependencies:
       '@tarojs/components': 3.4.4
       '@tarojs/react': 3.4.4_react@17.0.2
@@ -11271,21 +11271,8 @@ packages:
       dayjs: 1.11.0
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      taro-fast-common: 1.0.21
-      taro-fast-component: 2.0.23
-    dev: false
-
-  /taro-fast-component/2.0.22:
-    resolution: {integrity: sha512-n81OdpH898E+PA7+nNgC4AMQjQRk44tTUN4G6v8NdcJAROv1S/MFYdhLUTReXQp0LyceZNCpVMm2b8p7F3LiWA==}
-    dependencies:
-      '@tarojs/components': 3.4.4
-      '@tarojs/react': 3.4.4_react@17.0.2
-      '@tarojs/runtime': 3.4.4
-      '@tarojs/taro': 3.4.4
-      dayjs: 1.11.0
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
-      taro-fast-common: 1.0.21
+      taro-fast-common: 1.0.22
+      taro-fast-component: 2.0.24
     dev: false
 
   /taro-fast-component/2.0.23:
@@ -11298,11 +11285,24 @@ packages:
       dayjs: 1.11.0
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      taro-fast-common: 1.0.21
+      taro-fast-common: 1.0.22
     dev: false
 
-  /taro-fast-framework/1.0.23:
-    resolution: {integrity: sha512-8j5gq5VGo+G/mkP1PiRDQLJMa5uYmWBKHbYIWTaH0AZHdfpS2eWFutobwqSD35yxowqSBCwkp5k4vWC8uJ7gtA==}
+  /taro-fast-component/2.0.24:
+    resolution: {integrity: sha512-WTq3QpBPlRkSR/myhmNaoCCIuSfovGwguiHL/C0ZNNwrwwebgrVOVzYO/Xv2EC/3ZRnYNNGVoAkEBHBl7HklAg==}
+    dependencies:
+      '@tarojs/components': 3.4.4
+      '@tarojs/react': 3.4.4_react@17.0.2
+      '@tarojs/runtime': 3.4.4
+      '@tarojs/taro': 3.4.4
+      dayjs: 1.11.0
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      taro-fast-common: 1.0.22
+    dev: false
+
+  /taro-fast-framework/1.0.25:
+    resolution: {integrity: sha512-RJaCCbEZjj2eWuzFQpz0hz9zommKIzB1qfB+mhTN5Dl/mzhkuuoazQ5dHxO1diFTlUF5uIiRjTHldZLBonB3gQ==}
     dependencies:
       '@tarojs/components': 3.4.4
       '@tarojs/react': 3.4.4_react@17.0.2
@@ -11320,8 +11320,8 @@ packages:
       redux: 4.1.2
       redux-logger: 3.0.6
       redux-thunk: 2.4.1_redux@4.1.2
-      taro-fast-common: 1.0.21
-      taro-fast-component: 2.0.23
+      taro-fast-common: 1.0.22
+      taro-fast-component: 2.0.24
     transitivePeerDependencies:
       - react-native
     dev: false

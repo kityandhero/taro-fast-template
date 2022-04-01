@@ -18,7 +18,7 @@ import {
 } from 'taro-fast-component/es/customComponents';
 
 import { pathCollection } from '../../../customConfig/config';
-import BasePageWrapper from '../BasePageWrapper';
+import PageWrapper from '../../../customComponents/PageWrapper';
 
 import { classPrefix, buildItem } from '../Assist/tools';
 
@@ -52,7 +52,7 @@ definePageConfig({
   global,
   schedulingControl,
 }))
-export default class Index extends BasePageWrapper {
+export default class Index extends PageWrapper {
   enablePullDownRefresh = true;
 
   enableBackTop = true;

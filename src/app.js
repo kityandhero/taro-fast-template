@@ -10,7 +10,7 @@ import './app.less';
 const config = {
   showLogInConsole: checkEnvIsDevelopment(),
   // showRequestInfo: checkEnvIsDevelopment(),
-  showUseVirtualRequestMessage: true,
+  // showUseVirtualRequestMessage: true,
   apiPrefix: {
     corsTargetDomain: 'https://api.a.com',
   },
