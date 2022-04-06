@@ -44,7 +44,6 @@ const nameStyle = {
 // eslint-disable-next-line no-undef
 definePageConfig({
   navigationBarTitleText: '新闻应用--首页',
-  backgroundColor: '#3778F4',
 });
 
 @connect(({ news, session, entrance, global, schedulingControl }) => ({
