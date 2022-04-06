@@ -13,7 +13,7 @@ import { ActivityIndicator } from 'taro-fast-component/es/customComponents';
 import { shareTransfer } from '../../../customConfig/constants';
 import { pathCollection } from '../../../customConfig/config';
 
-import BasePageWrapper from '../../../customComponents/PageWrapper';
+import PageWrapper from '../../../customComponents/PageWrapper';
 
 // eslint-disable-next-line no-undef
 definePageConfig({
@@ -26,7 +26,7 @@ definePageConfig({
   global,
   schedulingControl,
 }))
-export default class Index extends BasePageWrapper {
+export default class Index extends PageWrapper {
   loadRemoteRequestAfterMount = false;
 
   constructor(props) {
