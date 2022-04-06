@@ -10,7 +10,7 @@ const galleryItem = {
   title: '横幅',
   type: 0,
   platformId: '1',
-  imageUrl: 'http://file.1010101.cc/361321729.png',
+  imageUrl: '',
   key: '',
   image: '',
   extra: {},

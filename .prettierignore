@@ -13,7 +13,6 @@
 **/public
 
 # file
-*.log
 *.lock
 *.swp
 *.jpg
@@ -26,6 +25,8 @@
 *.gif
 *.toml
 *.md
+*.log
+
 LICENSE
 
 # config file

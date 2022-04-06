@@ -22,6 +22,8 @@ import PageWrapper from '../../../customComponents/PageWrapper';
 
 import { classPrefix, buildItem } from '../Assist/tools';
 
+import noCardImage from '../../../assets/images/noCardImage.jpg';
+
 import './index.less';
 
 const boxStyle = {
@@ -102,7 +104,7 @@ export default class Index extends PageWrapper {
         const { imageUrl } = item;
 
         return {
-          image: imageUrl,
+          image: imageUrl || noCardImage,
         };
       },
     );
@@ -167,7 +169,7 @@ export default class Index extends PageWrapper {
                                   `${classPrefix}__navContainor__navBox__imageBox`,
                                 )}
                               >
-                                <ImageBox src={image} />
+                                <ImageBox src={image || noCardImage} />
                               </View>
                             </CenterBox>
                           }
