@@ -1,6 +1,8 @@
-import { recordObject } from 'taro-fast-common/es/utils/tools';
+import { navigateTo, recordObject } from 'taro-fast-common/es/utils/tools';
 import { getApiDataCore } from 'taro-fast-framework/es/utils/actionAssist';
 import { AuthorizationWrapper } from 'taro-fast-framework/es/framework';
+import { isFunction } from 'taro-fast-common/es/utils/typeCheck';
+import { pathCollection } from '../../customConfig/config';
 
 export default class PageWrapper extends AuthorizationWrapper {
   loadRemoteRequestDelay = 100;
@@ -86,5 +88,27 @@ export default class PageWrapper extends AuthorizationWrapper {
    */
   authorizeFailCallback = (remoteData) => {
     recordObject(remoteData);
+  };
+
+  goToHomeTab(callback = null) {
+    this.switchTab({
+      url: `${pathCollection.root.home.path}`,
+      success: () => {
+        if (isFunction(callback)) {
+          callback();
+        }
+      },
+    });
+  }
+
+  goToSection = ({ sectionId, callback = null }) => {
+    navigateTo({
+      url: `${pathCollection.section.section.path}?sectionId=${sectionId}`,
+      success: () => {
+        if (isFunction(callback)) {
+          callback();
+        }
+      },
+    });
   };
 }
