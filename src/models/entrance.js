@@ -1,4 +1,7 @@
-import { reducerCommonCollection } from 'taro-fast-framework/es/utils/dva';
+import {
+  reducerCommonCollection,
+  reducerCommonNameCollection,
+} from 'taro-fast-framework/es/utils/dva';
 
 import {
   signInData,
@@ -16,7 +19,7 @@ export default {
       const response = yield call(signInData, payload);
 
       yield put({
-        type: 'handleCommonData',
+        type: reducerCommonNameCollection.handleCommonData,
         payload: response,
       });
     },
@@ -24,7 +27,7 @@ export default {
       const response = yield call(registerData, payload);
 
       yield put({
-        type: 'handleCommonData',
+        type: reducerCommonNameCollection.handleCommonData,
         payload: response,
       });
     },
@@ -32,7 +35,7 @@ export default {
       const response = yield call(checkTicketValidityData, payload);
 
       yield put({
-        type: 'handleCommonData',
+        type: reducerCommonNameCollection.handleCommonData,
         payload: response,
       });
     },

@@ -1,4 +1,7 @@
-import { reducerCommonCollection } from 'taro-fast-framework/es/utils/dva';
+import {
+  reducerCommonCollection,
+  reducerCommonNameCollection,
+} from 'taro-fast-framework/es/utils/dva';
 
 import { getOverviewData } from '../services/news';
 
@@ -11,7 +14,7 @@ export default {
     *getOverview({ payload }, { call, put }) {
       const response = yield call(getOverviewData, payload);
       yield put({
-        type: 'handleCommonData',
+        type: reducerCommonNameCollection.handleCommonData,
         payload: response,
       });
     },

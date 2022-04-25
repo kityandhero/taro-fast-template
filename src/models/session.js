@@ -12,7 +12,7 @@ export default {
       const response = yield call(refreshSessionData, payload);
 
       yield put({
-        type: 'handleCommonData',
+        type: reducerCommonNameCollection.handleCommonData,
         payload: response,
       });
     },
