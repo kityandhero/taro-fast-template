@@ -6,6 +6,9 @@
 # templates
 **/templates/**
 
+# vscode
+.vs/**
+
 **/*.svg
 **/dist
 **/lib
@@ -26,6 +29,8 @@
 *.toml
 *.md
 *.log
+*.min.js
+**/pnpm-lock.yaml
 
 LICENSE
 
@@ -40,6 +45,13 @@ babel.config.js
 .prettierrc
 .stylelintignore
 .eslintcache
+.czrc
+.gitattributes
+.npmrc
 
 # local special
 config
+project.config.json
+
+# local special
+**/libs/**
