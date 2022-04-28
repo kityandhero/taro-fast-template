@@ -6,6 +6,9 @@
 # templates
 **/templates/**
 
+# husky
+**/.husky/**
+
 # vscode
 .vs/**
 
