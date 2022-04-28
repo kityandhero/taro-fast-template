@@ -42,6 +42,7 @@ specifiers:
   eslint-plugin-react-hooks: ^4.4.0
   inquirer: ^8.2.2
   postcss: ^8.4.12
+  postcss-less: ^6.0.0
   postcss-pxtorem: ^6.0.0
   preact: ^10.7.1
   prettier: ^2.6.2
@@ -71,6 +72,7 @@ dependencies:
   dayjs: 1.11.0
   dva-core: 2.0.4_redux@4.1.2
   dva-loading: 3.0.22_dva-core@2.0.4
+  postcss-less: 6.0.0_postcss@8.4.12
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-redux: 7.2.8_react-dom@17.0.2+react@17.0.2
@@ -9329,6 +9331,15 @@ packages:
       read-cache: 1.0.0
       resolve: 1.22.0
     dev: true
+
+  /postcss-less/6.0.0_postcss@8.4.12:
+    resolution: {integrity: sha512-FPX16mQLyEjLzEuuJtxA8X3ejDLNGGEG503d2YGZR5Ask1SpDN8KmZUMpzCvyalWRywAn1n1VOA5dcqfCLo5rg==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      postcss: ^8.3.5
+    dependencies:
+      postcss: 8.4.12
+    dev: false
 
   /postcss-loader/4.3.0_postcss@8.3.5+webpack@4.46.0:
     resolution: {integrity: sha512-M/dSoIiNDOo8Rk0mUqoj4kpGq91gcxCfb9PoyZVdZ76/AuhxylHDYZblNE8o+EQ9AMSASeMFEKxZf5aU6wlx1Q==}
