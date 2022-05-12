@@ -1,59 +1,68 @@
 {
-  "miniprogramRoot": "dist/weapp/",
-  "projectname": "taro-fast-template",
-  "description": "基于Taro的快速开发框架基于Taro的快速开发框架",
-  "appid": "wx80649e287ad28842",
-  "setting": {
-    "urlCheck": false,
-    "es6": false,
-    "enhance": false,
-    "postcss": false,
-    "preloadBackgroundData": false,
-    "minified": true,
-    "newFeature": false,
-    "coverView": true,
-    "nodeModules": true,
-    "autoAudits": false,
-    "showShadowRootInWxmlPanel": true,
-    "scopeDataCheck": false,
-    "uglifyFileName": false,
-    "checkInvalidKey": true,
-    "checkSiteMap": false,
-    "uploadWithSourceMap": true,
-    "compileHotReLoad": false,
-    "lazyloadPlaceholderEnable": false,
-    "useMultiFrameRuntime": true,
-    "useApiHook": true,
-    "useApiHostProcess": true,
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
+    "miniprogramRoot": "dist/weapp/",
+    "projectname": "taro-fast-template",
+    "description": "项目配置文件，详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+    "appid": "wx80649e287ad28842",
+    "setting": {
+        "urlCheck": false,
+        "es6": false,
+        "enhance": false,
+        "postcss": false,
+        "preloadBackgroundData": false,
+        "minified": true,
+        "newFeature": false,
+        "coverView": true,
+        "nodeModules": true,
+        "autoAudits": false,
+        "showShadowRootInWxmlPanel": true,
+        "scopeDataCheck": false,
+        "uglifyFileName": false,
+        "checkInvalidKey": true,
+        "checkSiteMap": false,
+        "uploadWithSourceMap": true,
+        "compileHotReLoad": false,
+        "lazyloadPlaceholderEnable": false,
+        "useMultiFrameRuntime": true,
+        "useApiHook": true,
+        "useApiHostProcess": true,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        },
+        "useIsolateContext": true,
+        "userConfirmedBundleSwitch": false,
+        "packNpmManually": false,
+        "packNpmRelationList": [],
+        "minifyWXSS": true,
+        "disableUseStrict": false,
+        "minifyWXML": true,
+        "showES6CompileOption": false,
+        "useCompilerPlugins": false,
+        "ignoreUploadUnusedFiles": true,
+        "useStaticServer": true
     },
-    "useIsolateContext": true,
-    "userConfirmedBundleSwitch": false,
-    "packNpmManually": false,
-    "packNpmRelationList": [],
-    "minifyWXSS": true,
-    "disableUseStrict": false,
-    "minifyWXML": true,
-    "showES6CompileOption": false,
-    "useCompilerPlugins": false,
-    "ignoreUploadUnusedFiles": true
-  },
-  "compileType": "miniprogram",
-  "libVersion": "2.22.1",
-  "condition": {
-    "miniprogram": {
-      "list": [
-        {
-          "id": 0,
-          "name": "entry",
-          "pathName": "pages/entry/main/index",
-          "query": "",
-          "scene": null
+    "compileType": "miniprogram",
+    "libVersion": "2.22.1",
+    "condition": {
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "entry",
+                    "pathName": "pages/entry/main/index",
+                    "query": "",
+                    "scene": null
+                }
+            ]
         }
-      ]
+    },
+    "srcMiniprogramRoot": "dist/weapp/",
+    "packOptions": {
+        "ignore": [],
+        "include": []
+    },
+    "editorSetting": {
+        "tabIndent": "insertSpaces",
+        "tabSize": 4
     }
-  }
 }

@@ -1,98 +1,18 @@
-import { navigateTo, recordObject } from 'taro-fast-common/es/utils/tools';
-import { getApiDataCore } from 'taro-fast-framework/es/utils/actionAssist';
-import { AuthorizationWrapper } from 'taro-fast-framework/es/framework';
-import { isFunction } from 'taro-fast-common/es/utils/typeCheck';
+import { navigateTo, switchTab } from 'taro-fast-common/es/utils/tools';
+import { isArray, isFunction } from 'taro-fast-common/es/utils/typeCheck';
 
 import { pathCollection } from '../../customConfig/pathConfig';
+import PageWrapperCore from '../PageWrapperCore';
 
-export default class PageWrapper extends AuthorizationWrapper {
-  loadRemoteRequestDelay = 100;
+export default class PageWrapper extends PageWrapperCore {
+  getSectionList = () => {
+    const { sectionList } = this.getMetaData();
 
-  useFadeSpinWrapper = true;
-
-  useSimulationFadeSpin = true;
-
-  simulationFadeSpinDuration = 800;
-
-  hideFadeSpinWrapperAfterLoadRemoteRequest = false;
-
-  showRenderCountInConsole = false;
-
-  viewStyle = {
-    backgroundColor: '#fff',
-  };
-
-  // loadRemoteRequestAfterMount = false;
-
-  verifySession = true;
-
-  verifyTicket = true;
-
-  verifyTicketValidity = true;
-
-  getGlobal = () => {
-    const { global } = this.props;
-
-    return global;
-  };
-
-  dispatchCheckTicketValidity = (data) => {
-    return this.dispatchApi({
-      type: 'entrance/checkTicketValidity',
-      payload: data,
-    });
-  };
-
-  dispatchRefreshSession = (data) => {
-    return this.dispatchApi({
-      type: 'session/refreshSession',
-      payload: data,
-    });
-  };
-
-  dispatchSingIn = (data) => {
-    return this.dispatchApi({
-      type: 'entrance/signIn',
-      payload: data,
-    });
-  };
-
-  getCheckTicketValidityApiData = () => {
-    return getApiDataCore({ props: this.props, modelName: 'entrance' });
-  };
-
-  getRefreshSessionApiData = () => {
-    return getApiDataCore({ props: this.props, modelName: 'session' });
-  };
-
-  getSignInApiData = () => {
-    return getApiDataCore({ props: this.props, modelName: 'entrance' });
-  };
-
-  reloadRemoteMetaData = () => {
-    const { dispatch } = this.props;
-
-    dispatch({
-      type: 'global/getMetaData',
-      payload: { force: true },
-    });
-  };
-
-  getRemoteMetaData = () => {
-    const { global } = this.props;
-    return global;
-  };
-
-  /**
-   * 登录校验失败时候的回调, 例如访问需要登录才能调用的接口
-   * @returns
-   */
-  authorizeFailCallback = (remoteData) => {
-    recordObject(remoteData);
+    return isArray(sectionList) ? sectionList : [];
   };
 
   goToHomeTab(callback = null) {
-    this.switchTab({
+    switchTab({
       url: `${pathCollection.root.home.path}`,
       success: () => {
         if (isFunction(callback)) {

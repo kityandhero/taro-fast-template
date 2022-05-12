@@ -20,23 +20,23 @@ export default defineAppConfig({
     },
   },
   serviceProviderTicket: '',
-  tabBar: {
-    color: '#353535',
-    selectedColor: '#3778F4',
-    borderStyle: 'black',
-    list: [
-      {
-        pagePath: 'pages/home/main/index',
-        iconPath: './assets/tab-bar/home.png',
-        iconPath: './assets/tab-bar/home-active.png',
-        text: '首页',
-      },
-      {
-        pagePath: 'pages/customer/index',
-        iconPath: './assets/tab-bar/user.png',
-        selectedIconPath: './assets/tab-bar/user-active.png',
-        text: '我的',
-      },
-    ],
-  },
+  // tabBar: {
+  //   color: '#353535',
+  //   selectedColor: '#3778F4',
+  //   borderStyle: 'black',
+  //   list: [
+  //     {
+  //       pagePath: 'pages/home/main/index',
+  //       iconPath: './assets/tab-bar/home.png',
+  //       iconPath: './assets/tab-bar/home-active.png',
+  //       text: '首页',
+  //     },
+  //     {
+  //       pagePath: 'pages/customer/index',
+  //       iconPath: './assets/tab-bar/user.png',
+  //       selectedIconPath: './assets/tab-bar/user-active.png',
+  //       text: '我的',
+  //     },
+  //   ],
+  // },
 });

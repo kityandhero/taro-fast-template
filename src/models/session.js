@@ -1,4 +1,7 @@
-import { reducerCommonCollection } from 'taro-fast-framework/es/utils/dva';
+import {
+  reducerCommonCollection,
+  reducerCommonNameCollection,
+} from 'taro-fast-framework/es/utils/dva';
 
 import { refreshSessionData } from '../services/session';
 
