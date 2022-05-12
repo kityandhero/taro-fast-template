@@ -17,7 +17,7 @@ import {
   More,
 } from 'taro-fast-component/es/customComponents';
 
-import { pathCollection } from '../../../customConfig/config';
+import { pathCollection } from '../../../customConfig/pathConfig';
 import PageWrapper from '../../../customComponents/PageWrapper';
 
 import { classPrefix, buildItem } from '../Assist/tools';

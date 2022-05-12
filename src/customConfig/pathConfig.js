@@ -1,5 +1,3 @@
-export const appId = '';
-
 const rootPathCollection = {
   entry: {
     path: '/pages/entry/main/index',

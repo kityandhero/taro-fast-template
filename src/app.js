@@ -8,6 +8,7 @@ import models from './models';
 import './app.less';
 
 const config = {
+  appId: '',
   showLogInConsole: checkEnvIsDevelopment(),
   // showRequestInfo: checkEnvIsDevelopment(),
   // showUseVirtualRequestMessage: true,

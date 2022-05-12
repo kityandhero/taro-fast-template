@@ -2,7 +2,8 @@ import { navigateTo, recordObject } from 'taro-fast-common/es/utils/tools';
 import { getApiDataCore } from 'taro-fast-framework/es/utils/actionAssist';
 import { AuthorizationWrapper } from 'taro-fast-framework/es/framework';
 import { isFunction } from 'taro-fast-common/es/utils/typeCheck';
-import { pathCollection } from '../../customConfig/config';
+
+import { pathCollection } from '../../customConfig/pathConfig';
 
 export default class PageWrapper extends AuthorizationWrapper {
   loadRemoteRequestDelay = 100;
