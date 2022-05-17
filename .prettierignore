@@ -32,6 +32,9 @@
 *.toml
 *.md
 *.log
+*.dockerignore
+*.
+*.code-workspace
 *.min.js
 **/pnpm-lock.yaml
 
@@ -57,4 +60,5 @@ config
 project.config.json
 
 # local special
+CNAME
 **/libs/**
