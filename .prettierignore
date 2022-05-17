@@ -33,7 +33,7 @@
 *.md
 *.log
 *.dockerignore
-*.
+*.ga
 *.code-workspace
 *.min.js
 **/pnpm-lock.yaml
