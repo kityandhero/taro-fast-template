@@ -19,27 +19,16 @@ const config = {
   authenticationFailCode: 2001,
   loginPath: '/entrance/signIn',
   apiVersion: 'v1',
+  footerImage: '',
+  footerText: '',
+  footerDescription: '',
+  defaultMetaData: {},
 };
 
 class App extends AppBase {
   constructor(props) {
     super(props, config, models);
   }
-
-  componentDidShow() {}
-
-  componentDidHide() {}
-
-  componentDidCatchError() {}
-
-  loadRemoteMetaData = () => {
-    const { dispatch } = this.store;
-
-    dispatch({
-      type: 'global/getMetaData',
-      payload: { force: true },
-    });
-  };
 }
 
 export default App;
