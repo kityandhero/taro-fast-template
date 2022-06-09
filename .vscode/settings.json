@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
+    "buble",
     "compat",
     "noninteractive",
     "pnpm",
@@ -9,6 +10,7 @@
     "pxtorem",
     "shouye",
     "subpackages",
+    "svgr",
     "Swiper"
   ]
 }

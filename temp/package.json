@@ -1,15 +1,15 @@
 {
-  "name": "taro-fast-template",
-  "version": "1.0.0",
+  "name": "simple-taro-fast-framework",
+  "version": "1.0.166",
   "private": true,
-  "description": "taro-fast-template",
+  "description": "基于Taro的快速开发框架基于Taro的快速开发框架",
   "templateInfo": {
     "name": "default",
     "typescript": false,
     "css": "less"
   },
   "scripts": {
-    "prepare": "husky install",
+    "clean-file": "rimraf ./node_modules",
     "start": "npm run dev:weapp",
     "start:h5": "npm run dev:h5",
     "build:weapp": "npx taro build --type weapp",
@@ -38,12 +38,7 @@
     "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src && npm run lint:style",
     "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
     "lint:style": "stylelint --fix \"./src/**/*.less\"",
-    "prettier": "prettier -c --write \"**/*\"",
-    "cz": "cz",
-    "scz": "git stage -A && npm run cz && git push",
-    "commitlint": "npx commitlint --edit",
-    "clean": "rimraf ./yarn-error.log && rimraf ./yarn.lock && rimraf ./package-lock.json && rimraf ./node_modules",
-    "reinstall": "npm run clean && git pull && taro-fast-cli env --agent http://127.0.0.1:7890 && pnpm install"
+    "prettier": "prettier -c --write \"**/*\""
   },
   "browserslist": [
     "last 3 versions",
@@ -120,8 +115,5 @@
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^26.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.5.0"
-  },
-  "optionalDependencies": {
-    "taro-fast-cli": "^1.0.4"
   }
 }
