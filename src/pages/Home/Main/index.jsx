@@ -4,7 +4,7 @@ import { View } from '@tarojs/components';
 
 import { navigateTo, transformSize } from 'taro-fast-common/es/utils/tools';
 import { isArray } from 'taro-fast-common/es/utils/typeCheck';
-import { getApiDataCore } from 'taro-fast-framework/es/utils/actionAssist';
+import { apiDataConvertCore } from 'taro-fast-framework/es/utils/actionAssist';
 import {
   Space,
   ImageBox,
@@ -73,7 +73,7 @@ export default class Index extends PageWrapper {
   }
 
   getApiData = (props) => {
-    return getApiDataCore({ props, modelName: 'news' });
+    return apiDataConvertCore({ props, modelName: 'news' });
   };
 
   afterLoadSuccess = ({
