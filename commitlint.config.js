@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-commonjs
 module.exports = {
   extends: ['@commitlint/config-conventional'],
   parserPreset: 'conventional-changelog-conventionalcommits',
@@ -50,12 +51,14 @@ module.exports = {
             emoji: '🚨',
           },
           build: {
-            description: '影响构建系统或外部依赖的更改(例如:gulp, broccoli, npm等)',
+            description:
+              '影响构建系统或外部依赖的更改(例如:gulp, broccoli, npm等)',
             title: 'Builds',
             emoji: '🛠',
           },
           ci: {
-            description: '更改CI配置文件和脚本(例如:Travis、Circle、BrowserStack、SauceLabs等)',
+            description:
+              '更改CI配置文件和脚本(例如:Travis、Circle、BrowserStack、SauceLabs等)',
             title: 'Continuous Integrations',
             emoji: '⚙️',
           },
@@ -93,7 +96,8 @@ module.exports = {
         description: '这个变化会影响任何未决问题吗?',
       },
       issuesBody: {
-        description: '如果问题被关闭，则提交需要一个主体。请输入提交本身的更长的描述',
+        description:
+          '如果问题被关闭，则提交需要一个主体。请输入提交本身的更长的描述',
       },
       issues: {
         description: '添加问题引用(例如:"fix #123"， "re #123".)',

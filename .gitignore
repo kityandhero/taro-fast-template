@@ -59,3 +59,6 @@ screenshot
 
 # build
 **/build
+
+# special
+/project.private.config.json
