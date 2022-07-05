@@ -3,16 +3,21 @@
     "buble",
     "compat",
     "conventionalcommits",
+    "miniprogram",
     "noninteractive",
     "pnpm",
     "preact",
     "precommit",
     "prefresh",
+    "preload",
     "projectname",
     "pxtorem",
+    "pxtransform",
     "shouye",
     "subpackages",
     "svgr",
-    "Swiper"
+    "Swiper",
+    "Wxml",
+    "WXSS"
   ]
 }
