@@ -43,7 +43,8 @@
     "scz": "git stage -A && npm run cz && git push",
     "commitlint": "npx commitlint --edit",
     "clean": "rimraf ./yarn-error.log && rimraf ./yarn.lock && rimraf ./package-lock.json && rimraf ./node_modules",
-    "reinstall": "npm run clean && taro-fast-cli env --agent http://127.0.0.1:7890 && pnpm install"
+    "reinstall": "npm run clean && taro-fast-cli env && pnpm install",
+    "reinstall:agent": "npm run clean && taro-fast-cli env --agent http://127.0.0.1:7890 && pnpm install"
   },
   "browserslist": [
     "last 3 versions",
