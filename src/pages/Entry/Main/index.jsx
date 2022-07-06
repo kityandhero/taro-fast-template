@@ -10,10 +10,9 @@ import {
 import { isFunction } from 'taro-fast-common/es/utils/typeCheck';
 import { ActivityIndicator } from 'taro-fast-component/es/customComponents';
 
+import PageWrapper from '../../../customComponents/PageWrapper';
 import { shareTransfer } from '../../../customConfig/constants';
 import { pathCollection } from '../../../customConfig/pathConfig';
-
-import PageWrapper from '../../../customComponents/PageWrapper';
 
 // eslint-disable-next-line no-undef
 definePageConfig({
@@ -27,6 +26,10 @@ definePageConfig({
   schedulingControl,
 }))
 export default class Index extends PageWrapper {
+  useFadeSpinWrapper = false;
+
+  initMetaDataForce = true;
+
   loadRemoteRequestAfterMount = false;
 
   constructor(props) {
@@ -121,6 +124,8 @@ export default class Index extends PageWrapper {
         } else {
           //跳转首页
         }
+
+        return;
       })
       .catch((error) => {
         recordObject({ error });
