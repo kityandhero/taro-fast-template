@@ -31,7 +31,7 @@ export default class Index extends PageWrapper {
     };
   }
 
-  getApiData = (props) => {
+  apiDataConvert = (props) => {
     const {
       section: { data },
     } = props;

@@ -4,25 +4,23 @@ import { View } from '@tarojs/components';
 
 import { navigateTo, transformSize } from 'taro-fast-common/es/utils/tools';
 import { isArray } from 'taro-fast-common/es/utils/typeCheck';
-import { apiDataConvertCore } from 'taro-fast-framework/es/utils/actionAssist';
 import {
-  Space,
-  ImageBox,
-  Swiper,
-  SearchBar,
-  Grid,
-  FlexBox,
-  CenterBox,
   Card,
+  CenterBox,
+  FlexBox,
+  Grid,
+  ImageBox,
   More,
+  SearchBar,
+  Space,
+  Swiper,
 } from 'taro-fast-component/es/customComponents';
-
-import { pathCollection } from '../../../customConfig/pathConfig';
-import PageWrapper from '../../../customComponents/PageWrapper';
-
-import { classPrefix, buildItem } from '../Assist/tools';
+import { apiDataConvertCore } from 'taro-fast-framework/es/utils/actionAssist';
 
 import noCardImage from '../../../assets/images/noCardImage.jpg';
+import PageWrapper from '../../../customComponents/PageWrapper';
+import { pathCollection } from '../../../customConfig/pathConfig';
+import { buildItem, classPrefix } from '../Assist/tools';
 
 import './index.less';
 
@@ -72,7 +70,7 @@ export default class Index extends PageWrapper {
     };
   }
 
-  getApiData = (props) => {
+  apiDataConvert = (props) => {
     return apiDataConvertCore({ props, modelName: 'news' });
   };
 
