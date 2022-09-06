@@ -1,27 +1,38 @@
 import {
-  reducerCommonCollection,
-  reducerCommonNameCollection,
+  reducerCollection,
+  reducerDefaultParams,
+  reducerNameCollection,
+  tacitlyState,
 } from 'taro-fast-framework/es/utils/dva';
+import { pretreatmentRemoteSingleData } from 'taro-fast-framework/es/utils/requestAssistor';
 
 import { refreshSessionData } from '../services/session';
 
 export default {
   namespace: 'session',
 
-  state: {},
+  state: {
+    ...tacitlyState,
+  },
 
   effects: {
-    *refreshSession({ payload }, { call, put }) {
+    *refreshSession({ payload, alias }, { call, put }) {
       const response = yield call(refreshSessionData, payload);
 
+      const dataAdjust = pretreatmentRemoteSingleData({ source: response });
+
       yield put({
-        type: reducerCommonNameCollection.handleCommonData,
-        payload: response,
+        type: reducerNameCollection.reducerData,
+        payload: dataAdjust,
+        alias,
+        ...reducerDefaultParams,
       });
+
+      return dataAdjust;
     },
   },
 
   reducers: {
-    ...reducerCommonCollection,
+    ...reducerCollection,
   },
 };

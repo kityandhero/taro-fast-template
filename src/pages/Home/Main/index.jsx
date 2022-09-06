@@ -15,7 +15,6 @@ import {
   Space,
   Swiper,
 } from 'taro-fast-component/es/customComponents';
-import { apiDataConvertCore } from 'taro-fast-framework/es/utils/actionAssist';
 
 import noCardImage from '../../../assets/images/noCardImage.jpg';
 import PageWrapper from '../../../customComponents/PageWrapper';
@@ -69,10 +68,6 @@ export default class Index extends PageWrapper {
       },
     };
   }
-
-  apiDataConvert = (props) => {
-    return apiDataConvertCore({ props, modelName: 'news' });
-  };
 
   afterLoadSuccess = ({
     // eslint-disable-next-line no-unused-vars

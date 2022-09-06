@@ -1,33 +1,55 @@
 import {
-  reducerCommonCollection,
-  reducerCommonNameCollection,
+  reducerCollection,
+  reducerDefaultParams,
+  reducerNameCollection,
+  tacitlyState,
 } from 'taro-fast-framework/es/utils/dva';
+import {
+  pretreatmentRemotePageListData,
+  pretreatmentRemoteSingleData,
+} from 'taro-fast-framework/es/utils/requestAssistor';
 
-import { pageListData, getData } from '../services/article';
+import { getData, pageListData } from '../services/article';
 
 export default {
   namespace: 'article',
 
-  state: {},
+  state: {
+    ...tacitlyState,
+  },
 
   effects: {
-    *pageList({ payload }, { call, put }) {
+    *pageList({ payload, alias }, { call, put }) {
       const response = yield call(pageListData, payload);
+
+      const dataAdjust = pretreatmentRemotePageListData({ source: response });
+
       yield put({
-        type: reducerCommonNameCollection.handlePageListData,
-        payload: response,
+        type: reducerNameCollection.handlePageListData,
+        payload: dataAdjust,
+        alias,
+        ...reducerDefaultParams,
       });
+
+      return dataAdjust;
     },
-    *get({ payload }, { call, put }) {
+    *get({ payload, alias }, { call, put }) {
       const response = yield call(getData, payload);
+
+      const dataAdjust = pretreatmentRemoteSingleData({ source: response });
+
       yield put({
-        type: reducerCommonNameCollection.handleCommonData,
-        payload: response,
+        type: reducerNameCollection.reducerData,
+        payload: dataAdjust,
+        alias,
+        ...reducerDefaultParams,
       });
+
+      return dataAdjust;
     },
   },
 
   reducers: {
-    ...reducerCommonCollection,
+    ...reducerCollection,
   },
 };

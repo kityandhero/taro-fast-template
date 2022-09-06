@@ -1,7 +1,6 @@
 import { navigateTo, recordObject } from 'taro-fast-common/es/utils/tools';
-import { apiDataConvertCore } from 'taro-fast-framework/es/utils/actionAssist';
-import { AuthorizationWrapper } from 'taro-fast-framework/es/framework';
 import { isFunction } from 'taro-fast-common/es/utils/typeCheck';
+import { AuthorizationWrapper } from 'taro-fast-framework/es/framework';
 
 import { pathCollection } from '../../customConfig/pathConfig';
 
@@ -55,18 +54,6 @@ export default class PageWrapper extends AuthorizationWrapper {
       type: 'entrance/signIn',
       payload: data,
     });
-  };
-
-  getCheckTicketValidityApiData = () => {
-    return apiDataConvertCore({ props: this.props, modelName: 'entrance' });
-  };
-
-  getRefreshSessionApiData = () => {
-    return apiDataConvertCore({ props: this.props, modelName: 'session' });
-  };
-
-  getSignInApiData = () => {
-    return apiDataConvertCore({ props: this.props, modelName: 'entrance' });
   };
 
   reloadRemoteMetaData = () => {

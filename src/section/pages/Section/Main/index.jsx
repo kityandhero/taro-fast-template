@@ -31,14 +31,6 @@ export default class Index extends PageWrapper {
     };
   }
 
-  apiDataConvert = (props) => {
-    const {
-      section: { data },
-    } = props;
-
-    return data;
-  };
-
   renderFurther() {
     return (
       <>

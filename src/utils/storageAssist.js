@@ -1,6 +1,6 @@
 import {
-  removeLocalStorage,
   getJsonFromLocalStorage,
+  removeLocalStorage,
   saveJsonToLocalStorage,
 } from 'taro-fast-common/es/utils/tools';
 import { getToken } from 'taro-fast-framework/es/utils/globalStorageAssist';

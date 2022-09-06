@@ -1,4 +1,5 @@
-import { getNow, addMinute } from 'taro-fast-common/es/utils/tools';
+import { addMinute, getNow } from 'taro-fast-common/es/utils/tools';
+
 import { executiveRequest } from '../utils/request';
 
 export async function signInData(params) {

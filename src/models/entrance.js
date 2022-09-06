@@ -1,47 +1,70 @@
 import {
-  reducerCommonCollection,
-  reducerCommonNameCollection,
+  reducerCollection,
+  reducerDefaultParams,
+  reducerNameCollection,
+  tacitlyState,
 } from 'taro-fast-framework/es/utils/dva';
+import { pretreatmentRemoteSingleData } from 'taro-fast-framework/es/utils/requestAssistor';
 
 import {
-  signInData,
-  registerData,
   checkTicketValidityData,
+  registerData,
+  signInData,
 } from '../services/entrance';
 
 export default {
   namespace: 'entrance',
 
-  state: {},
+  state: {
+    ...tacitlyState,
+  },
 
   effects: {
-    *signIn({ payload }, { call, put }) {
+    *signIn({ payload, alias }, { call, put }) {
       const response = yield call(signInData, payload);
 
+      const dataAdjust = pretreatmentRemoteSingleData({ source: response });
+
       yield put({
-        type: reducerCommonNameCollection.handleCommonData,
-        payload: response,
+        type: reducerNameCollection.reducerData,
+        payload: dataAdjust,
+        alias,
+        ...reducerDefaultParams,
       });
+
+      return dataAdjust;
     },
-    *register({ payload }, { call, put }) {
+    *register({ payload, alias }, { call, put }) {
       const response = yield call(registerData, payload);
 
-      yield put({
-        type: reducerCommonNameCollection.handleCommonData,
-        payload: response,
-      });
-    },
-    *checkTicketValidity({ payload }, { call, put }) {
-      const response = yield call(checkTicketValidityData, payload);
+      const dataAdjust = pretreatmentRemoteSingleData({ source: response });
 
       yield put({
-        type: reducerCommonNameCollection.handleCommonData,
-        payload: response,
+        type: reducerNameCollection.reducerData,
+        payload: dataAdjust,
+        alias,
+        ...reducerDefaultParams,
       });
+
+      return dataAdjust;
+    },
+    *checkTicketValidity({ payload, alias }, { call, put }) {
+      const response = yield call(checkTicketValidityData, payload);
+
+      const dataAdjust = pretreatmentRemoteSingleData({ source: response });
+
+      yield put({
+        type: reducerNameCollection.reducerData,
+        payload: dataAdjust,
+        alias,
+        ...reducerDefaultParams,
+      });
+
+      return dataAdjust;
     },
   },
 
   reducers: {
-    ...reducerCommonCollection,
+    ...reducerCollection,
   },
 };
