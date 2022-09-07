@@ -75,12 +75,12 @@
     "redux": "^4.2.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.1",
-    "taro-fast-common": "^1.0.82",
-    "taro-fast-component": "^2.0.162",
-    "taro-fast-component-extra": "^2.0.160",
-    "taro-fast-component-prism": "^2.0.160",
-    "taro-fast-dva": "^2.0.6",
-    "taro-fast-framework": "^1.0.251"
+    "taro-fast-common": "^1.0.84",
+    "taro-fast-component": "^2.0.164",
+    "taro-fast-component-extra": "^2.0.162",
+    "taro-fast-component-prism": "^2.0.162",
+    "taro-fast-dva": "^2.0.8",
+    "taro-fast-framework": "^1.0.253"
   },
   "devDependencies": {
     "@babel/core": "^7.19.0",
@@ -134,6 +134,6 @@
   },
   "optionalDependencies": {
     "@tarojs/mini-runner": "^3.5.5",
-    "taro-fast-cli": "^1.0.10"
+    "taro-fast-cli": "^1.0.11"
   }
 }
