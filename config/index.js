@@ -30,22 +30,7 @@ const config = {
   compiler: {
     type: 'webpack5',
     prebundle: {
-      enable: true,
-      exclude: [
-        '@tarojs/plugin-framework-react/dist/runtime',
-        '@tarojs/plugin-platform-weapp/dist/runtime',
-        '@tarojs/runtime',
-        '@tarojs/taro',
-        'react',
-        'react-dom',
-        'react/jsx-runtime',
-        'taro-fast-common',
-        'taro-fast-component',
-        'taro-fast-component-extra',
-        'taro-fast-component-prism',
-        'taro-fast-dva',
-        'taro-fast-framework',
-      ],
+      enable: false,
     },
   },
   cache: {
