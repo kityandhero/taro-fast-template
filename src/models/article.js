@@ -25,7 +25,7 @@ export default {
       const dataAdjust = pretreatmentRemotePageListData({ source: response });
 
       yield put({
-        type: reducerNameCollection.handlePageListData,
+        type: reducerNameCollection.reducerData,
         payload: dataAdjust,
         alias,
         ...reducerDefaultParams,

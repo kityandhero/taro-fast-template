@@ -34,7 +34,7 @@ export default {
       const dataAdjust = pretreatmentRemotePageListData({ source: response });
 
       yield put({
-        type: reducerNameCollection.handlePageListData,
+        type: reducerNameCollection.reducerData,
         payload: dataAdjust,
         alias,
         ...reducerDefaultParams,
@@ -48,7 +48,7 @@ export default {
       const dataAdjust = pretreatmentRemotePageListData({ source: response });
 
       yield put({
-        type: reducerNameCollection.handlePageListData,
+        type: reducerNameCollection.reducerData,
         payload: dataAdjust,
         alias,
         ...reducerDefaultParams,
@@ -62,7 +62,7 @@ export default {
       const dataAdjust = pretreatmentRemoteListData({ source: response });
 
       yield put({
-        type: reducerNameCollection.handleListData,
+        type: reducerNameCollection.reducerData,
         payload: dataAdjust,
         alias,
         ...reducerDefaultParams,
@@ -76,7 +76,7 @@ export default {
       const dataAdjust = pretreatmentRemoteListData({ source: response });
 
       yield put({
-        type: reducerNameCollection.handleListData,
+        type: reducerNameCollection.reducerData,
         payload: dataAdjust,
         alias,
         ...reducerDefaultParams,
