@@ -58,7 +58,7 @@
     "taro-fast-component-extra": "^2.0.165",
     "taro-fast-component-prism": "^2.0.165",
     "taro-fast-dva": "^2.0.10",
-    "taro-fast-framework": "^1.0.257"
+    "taro-fast-framework": "^1.0.258"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
