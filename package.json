@@ -112,6 +112,6 @@
     "webpack": "^5.74.0"
   },
   "optionalDependencies": {
-    "taro-fast-cli": "^1.0.11"
+    "taro-fast-cli": "^1.0.12"
   }
 }
